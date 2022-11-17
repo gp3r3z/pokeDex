@@ -1,0 +1,24 @@
+/* BASIC STYLES HERE */
+
+body {
+  font-family: "VT323", monospace;
+}
+
+.hero-img {
+  background-image: url();
+}
+.pokemonline-style {
+  background-color: white;
+}
+.pokemonline-style:hover {
+  background-color: rgb(186, 186, 186);
+}
+
+/* img {
+  min-height: 45vh;
+  min-width: 45vw;
+} */
+
+.poke-list-styles {
+  min-height: 35vh;
+}
