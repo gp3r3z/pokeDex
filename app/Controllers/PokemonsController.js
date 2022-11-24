@@ -8,20 +8,20 @@ import { setHTML } from '../Utils/Writer.js'
 
 function _drawPokemonList() {
     let pokemons = appState.pokemonsAPI
-    console.log('%cLOG: ', 'color:green;', ' Drawing pokemons ', pokemons)
+    // console.log('%cLOG: ', 'color:green;', ' Drawing pokemons ', pokemons)
 
     let template = ''
     pokemons.forEach(pokemon => template += PokeApiPokemon.ListTemplate(pokemon))
 
     setHTML('poke-options', template)
 
-
+ 
 }
 
 function _drawActivePokemon() {
     const pokemon = appState.activePokemon
 
-    console.log('%cLOG: ', 'color:green;', 'Active Triggered .. drawing ', pokemon)
+    // console.log('%cLOG: ', 'color:green;', 'Active Triggered .. drawing ', pokemon)
     // NOTE determines if there is an active pokemon to draw or not
     if (pokemon) {
         setHTML('pokemon-selected', pokemon.ActivePokemonTemplate)
@@ -50,7 +50,7 @@ export class PokemonsController {
 
     }
     async getActivePoke(pokemon) {
-        console.log('%cLOG: ', 'color:green;', 'Getting active ', pokemon)
+        // console.log('%cLOG: ', 'color:green;', 'Getting active ', pokemon)
         try {
             await pokemonsService.getActivePoke(pokemon)
         } catch (error) {
@@ -61,14 +61,16 @@ export class PokemonsController {
     async capturePokemon(name) {
         try {
 
-            console.log('%cLOG: ', 'color:green;', 'Capturing pokemon', name)
+            // console.log('%cLOG: ', 'color:green;', 'Capturing pokemon', name)
 
             await pokemonsService.capturePokemon(name)
 
-            console.log('%cLOG: ', 'color:green;', 'loading ...',)
+            // console.log('%cLOG: ', 'color:green;', 'loading ...',)
         } catch (error) {
-
+            Pop.error(error.message)
+            console.error(error)
         }
     }
+
 
 }

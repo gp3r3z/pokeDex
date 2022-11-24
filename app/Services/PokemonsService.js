@@ -13,21 +13,21 @@ const pokeAPI = axios.create({
 
 class PokemonsService {
     async getPokemons() {
-        console.log('%cLOG: ', 'color:yellow;', 'Getting data from api')
+
         try {
             const res = await pokeAPI.get()
-            console.log('%cLOG: ', 'color:green;', res.data.results)
+            // console.log('%cLOG: ', 'color:green;', res.data.results)
 
             appState.pokemonsAPI = res.data.results
-            console.log('%cLOG: ', 'color:yellow;', 'API Update', appState.pokemonsAPI)
+            // console.log('%cLOG: ', 'color:yellow;', 'API Update', appState.pokemonsAPI)
 
         } catch (error) {
             Pop.error(error.message)
-            console.error(error)
+            // console.error(error)
         }
     }
     async getActivePoke(pokemon) {
-        console.log('%cLOG: ', 'color:yellow;', 'Setting active ')
+        // console.log('%cLOG: ', 'color:yellow;', 'Setting active ')
         try {
             const res = await pokeAPI.get(pokemon)
             // NOTE don't map single objects. Not cause it's bad, cause it wont work
@@ -42,7 +42,7 @@ class PokemonsService {
     async capturePokemon(name) {
 
         const capturedPokemon = appState.pokemonsAPI.find(pokemon => pokemon.name == name)
-        console.log('%cLOG: ', 'color:yellow;', capturedPokemon)
+        // console.log('%cLOG: ', 'color:yellow;', capturedPokemon)
 
 
 

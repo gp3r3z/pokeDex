@@ -5,7 +5,7 @@ body {
 }
 
 .hero-img {
-  background-image: url();
+  background-image: url("https://static.vecteezy.com/system/resources/thumbnails/003/520/597/original/abstract-background-with-various-beautiful-shapes-free-video.jpg");
 }
 .pokemonline-style {
   background-color: white;
@@ -20,5 +20,33 @@ body {
 } */
 
 .poke-list-styles {
-  min-height: 35vh;
+  max-height: 75vh;
+  list-style: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 13px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: red;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000;
+}
+
+#poke-options {
+  max-height: 60vh;
+  list-style: none;
 }
